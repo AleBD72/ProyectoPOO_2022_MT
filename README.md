@@ -19,8 +19,8 @@
 ### Pantalla de login
 
 
-### Módulos disponibles en el perfil de Cajero
+### Vista del perfil de Cajero
 
-### Módulos disponibles en el perfil de Bodeguero
+### Vista del perfil de Bodeguero
 
-### Módulos disponibles en el perfil de Administrador
+### Vista del perfil de Administrador
