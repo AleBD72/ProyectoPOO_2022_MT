@@ -1,4 +1,4 @@
-# ProyectoPOO_2022_M
+# ProyectoPOO_2022_MT
 
 - Camila Alejandra Mier Cadena
 - Programación Orientada a Objetos
