@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Paneles.sistema">
+  <grid id="27dc6" binding="principal" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1036" height="590"/>
+    </constraints>
+    <properties>
+      <background color="-328961"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="72756" class="javax.swing.JMenuBar" binding="menBar" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="c7ca4" class="javax.swing.JMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-18687"/>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <name value=""/>
+              <popupMenuVisible value="false"/>
+              <text value="VENTAS"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="9794b" class="javax.swing.JMenuItem">
+                <constraints/>
+                <properties>
+                  <font name="Quicksand Medium" size="12" style="0"/>
+                  <hideActionText value="false"/>
+                  <text value="Ventas"/>
+                </properties>
+              </component>
+              <component id="bce67" class="javax.swing.JMenuItem">
+                <constraints/>
+                <properties>
+                  <font name="Quicksand Medium" size="12" style="0"/>
+                  <text value="Nueva Venta"/>
+                </properties>
+              </component>
+              <component id="eefc1" class="javax.swing.JMenuItem">
+                <constraints/>
+                <properties>
+                  <font name="Quicksand Medium" size="12" style="0"/>
+                  <text value="Clientes"/>
+                </properties>
+              </component>
+              <component id="9bb38" class="javax.swing.JMenuItem">
+                <constraints/>
+                <properties>
+                  <font name="Quicksand Medium" size="12" style="0"/>
+                  <text value="Productos"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="4804a" class="javax.swing.JMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-228096"/>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <text value="BODEGA"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="4de85" class="javax.swing.JMenuItem">
+                <constraints/>
+                <properties>
+                  <font name="Quicksand Medium" size="12" style="0"/>
+                  <text value="Administrar Productos"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="98630" class="javax.swing.JMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14639429"/>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <text value="ADMINISTRACIÓN"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="39a62" class="javax.swing.JMenuItem">
+                <constraints/>
+                <properties>
+                  <font name="Quicksand Medium" size="12" style="0"/>
+                  <selected value="false"/>
+                  <text value="Administrar Usuarios"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <hspacer id="961b9">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <grid id="bb091" layout-manager="GridLayoutManager" row-count="9" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="686f" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Quicksand Medium" size="36" style="0"/>
+              <foreground color="-16633785"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="Bienvenido al sistema de Farmacia MCTJ"/>
+            </properties>
+          </component>
+          <component id="88f52" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Montserrat" size="16" style="0"/>
+              <foreground color="-16776959"/>
+              <text value="Sus credenciales son las siguientes:"/>
+            </properties>
+          </component>
+          <component id="8dd92" class="javax.swing.JLabel" binding="codUser">
+            <constraints>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins Light" size="12" style="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="d45d8" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <foreground color="-16776959"/>
+              <text value="Código"/>
+            </properties>
+          </component>
+          <component id="edc48" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <foreground color="-16776959"/>
+              <text value="Nombre"/>
+            </properties>
+          </component>
+          <component id="fbf28" class="javax.swing.JLabel" binding="nomUser">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins Light" size="12" style="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="36861" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <foreground color="-16776959"/>
+              <text value="Email"/>
+            </properties>
+          </component>
+          <component id="20bb" class="javax.swing.JLabel" binding="mailUser">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins Light" size="12" style="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="6fb64" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <foreground color="-16776959"/>
+              <text value="Celular"/>
+            </properties>
+          </component>
+          <component id="5fb62" class="javax.swing.JLabel" binding="celUser">
+            <constraints>
+              <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins Light" size="12" style="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="5f966" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Quicksand Medium" size="12" style="0"/>
+              <foreground color="-16776959"/>
+              <text value="Tipo de Credencial"/>
+            </properties>
+          </component>
+          <component id="e1151" class="javax.swing.JLabel" binding="rolUser">
+            <constraints>
+              <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins Light" size="12" style="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="5ba27" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="7" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <icon value="Images/first-aid-kit (3).png"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <vspacer id="277a4">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="777f9">
+            <constraints>
+              <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+        </children>
+      </grid>
+      <grid id="6e2f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="30a5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+          <foreground color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="bb41b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="4" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="201a0" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <component id="d1a3f" class="javax.swing.JButton" binding="salirPBT">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <font name="Poppins SemiBold" size="12" style="0"/>
+          <foreground color="-16633785"/>
+          <icon value="Images/logout.png"/>
+          <text value="Salir"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
