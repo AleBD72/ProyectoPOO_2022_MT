@@ -1,6 +1,8 @@
 # ProyectoPOO_2022_MT
-
-- Camila Alejandra Mier Cadena
+Integrantes:
+- Camila Mier Cadena
+- Jhon Torres
+Asignatura:
 - Programación Orientada a Objetos
 
 ## Sistema de Módulos para Farmacia
