@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Ventas">
+  <grid id="27dc6" binding="ventasPanel" layout-manager="GridLayoutManager" row-count="4" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="990" height="492"/>
+    </constraints>
+    <properties>
+      <background color="-328961"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="ecbb6" binding="tabbedPane1" default-binding="true">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+          <font name="Poppins Medium" size="12" style="0"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="d8c7f" layout-manager="GridLayoutManager" row-count="5" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Ventas"/>
+            </constraints>
+            <properties>
+              <background color="-328961"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="424b0" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Código de Venta"/>
+                </properties>
+              </component>
+              <component id="f982c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Producto"/>
+                </properties>
+              </component>
+              <component id="5bffa" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Cantidad"/>
+                </properties>
+              </component>
+              <component id="8b752" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Precio"/>
+                </properties>
+              </component>
+              <component id="50fcd" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Stock"/>
+                </properties>
+              </component>
+              <component id="1b3a5" class="javax.swing.JTextField" binding="codVentaTF">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="1a97e" class="javax.swing.JTextField" binding="prodTF">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="11d41" class="javax.swing.JTextField" binding="cantiTF">
+                <constraints>
+                  <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="8aa48" class="javax.swing.JTextField" binding="precioTF">
+                <constraints>
+                  <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                </properties>
+              </component>
+              <component id="fce4b" class="javax.swing.JTextField" binding="stockTF">
+                <constraints>
+                  <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="f779b" class="javax.swing.JButton" binding="eliminaVentaBT">
+                <constraints>
+                  <grid row="0" column="6" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Eliminar"/>
+                </properties>
+              </component>
+              <scrollpane id="a65e6">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="6" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="1737a" class="javax.swing.JTable" binding="ventasT">
+                    <constraints/>
+                    <properties>
+                      <font name="Montserrat" size="12" style="0"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="7bc9f" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="DNI"/>
+                </properties>
+              </component>
+              <component id="2605" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Nombre"/>
+                </properties>
+              </component>
+              <component id="55edd" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Total a Pagar"/>
+                </properties>
+              </component>
+              <component id="bd47" class="javax.swing.JLabel" binding="totalL">
+                <constraints>
+                  <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="18e71" class="javax.swing.JTextField" binding="rucVentaTF">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="36927" class="javax.swing.JTextField" binding="nombreClienteTF">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                </properties>
+              </component>
+              <component id="d57bd" class="javax.swing.JButton" binding="generarBT">
+                <constraints>
+                  <grid row="3" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins SemiBold" size="12" style="0"/>
+                  <text value="Generar Venta"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="6be27" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Clientes"/>
+            </constraints>
+            <properties>
+              <background color="-328961"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="4ff8f" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="DNI"/>
+                </properties>
+              </component>
+              <vspacer id="fbae6">
+                <constraints>
+                  <grid row="4" column="0" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="24899" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Nombre"/>
+                </properties>
+              </component>
+              <component id="f4e91" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Celular"/>
+                </properties>
+              </component>
+              <component id="245d7" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Mail"/>
+                </properties>
+              </component>
+              <component id="77e99" class="javax.swing.JTextField" binding="dniCliTF">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <component id="47996" class="javax.swing.JTextField" binding="nomCliTF">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <component id="26355" class="javax.swing.JTextField" binding="celTF">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <component id="7d838" class="javax.swing.JTextField" binding="mailTF">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <scrollpane id="726cf">
+                <constraints>
+                  <grid row="0" column="3" row-span="4" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="b2829" class="javax.swing.JTable" binding="clientesT">
+                    <constraints/>
+                    <properties>
+                      <font name="Montserrat" size="12" style="0"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="20cfc" class="javax.swing.JButton" binding="guardarBT">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Guardar"/>
+                </properties>
+              </component>
+              <component id="185f4" class="javax.swing.JButton" binding="actualizarBT">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Actualizar"/>
+                </properties>
+              </component>
+              <component id="d7fc6" class="javax.swing.JButton" binding="eliminarBT">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Eliminar"/>
+                </properties>
+              </component>
+              <component id="a1fed" class="javax.swing.JButton" binding="nuevoBT">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Nuevo"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="a4f35" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Productos"/>
+            </constraints>
+            <properties>
+              <background color="-328961"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="e6647" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Codigo"/>
+                </properties>
+              </component>
+              <vspacer id="d5920">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="b0d5b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Nombre"/>
+                </properties>
+              </component>
+              <component id="d1dcb" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Stock"/>
+                </properties>
+              </component>
+              <component id="4b1fb" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="Precio"/>
+                </properties>
+              </component>
+              <component id="1345c" class="javax.swing.JTextField" binding="codProdTF">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <component id="88ed" class="javax.swing.JTextField" binding="nomProdTF">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <component id="cc305" class="javax.swing.JTextField" binding="stockProdTF">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <component id="473c7" class="javax.swing.JTextField" binding="precioProdTF">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <scrollpane id="8f427">
+                <constraints>
+                  <grid row="0" column="3" row-span="4" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="d4306" class="javax.swing.JTable" binding="productosT">
+                    <constraints/>
+                    <properties>
+                      <font name="Montserrat" size="12" style="0"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="e40db" class="javax.swing.JButton" binding="buscarProdBT">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Buscar"/>
+                </properties>
+              </component>
+              <component id="f040d" class="javax.swing.JButton" binding="excelBT">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Excel"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="71371" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Ventas"/>
+            </constraints>
+            <properties>
+              <background color="-328961"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <scrollpane id="f4b9b">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="81083" class="javax.swing.JTable" binding="ventasGuardadasT">
+                    <constraints/>
+                    <properties>
+                      <font name="Montserrat" size="12" style="0"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="7e066" class="javax.swing.JButton" binding="generarNotaDeVentaBT">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Generar Nota de Venta"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="be221" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Conf. Farmacia"/>
+            </constraints>
+            <properties>
+              <background color="-328961"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="5ab7e" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Quicksand Light" size="28" style="1"/>
+                  <foreground color="-228096"/>
+                  <text value="Datos de la Farmacia"/>
+                </properties>
+              </component>
+              <component id="1c526" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="14" style="0"/>
+                  <text value="RUC"/>
+                </properties>
+              </component>
+              <component id="2e753" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="14" style="0"/>
+                  <text value="Nombre"/>
+                </properties>
+              </component>
+              <component id="48bb6" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="14" style="0"/>
+                  <text value="Dirección"/>
+                </properties>
+              </component>
+              <component id="1e09a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="14" style="0"/>
+                  <text value="Teléfono"/>
+                </properties>
+              </component>
+              <component id="6f843" class="javax.swing.JButton" binding="actualizarFarBT">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Actualizar Datos"/>
+                </properties>
+              </component>
+              <component id="ae31b" class="javax.swing.JTextField" binding="rucFarTF">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="ba236" class="javax.swing.JTextField" binding="nomFarTF">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="d5568" class="javax.swing.JTextField" binding="direcFarTF">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="cf1ca" class="javax.swing.JTextField" binding="telfFarTF">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+      <component id="ec434" class="javax.swing.JButton" binding="SalirSistemaBT">
+        <constraints>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <font name="Poppins SemiBold" size="12"/>
+          <foreground color="-16633785"/>
+          <icon value="Images/logout.png"/>
+          <text value="Salir"/>
+        </properties>
+      </component>
+      <component id="41eb0" class="javax.swing.JButton" binding="volverBT">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <font name="Poppins SemiBold" size="12"/>
+          <foreground color="-16633785"/>
+          <icon value="Images/refresh.png"/>
+          <text value="Volver"/>
+        </properties>
+      </component>
+      <component id="ad603" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Quicksand Light" size="32" style="1"/>
+          <foreground color="-228096"/>
+          <icon value="Images/sales.png"/>
+          <text value="Farmacia CMTJ"/>
+        </properties>
+      </component>
+      <hspacer id="a60e3">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <grid id="95dfe" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="6" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="91dba" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="4d1b5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="82dba" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </grid>
+</form>

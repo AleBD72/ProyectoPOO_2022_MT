@@ -15,13 +15,14 @@ public class sistema extends JFrame {
     private JMenuBar menuBar;
     private JPanel principalPanel;
     private JButton salirDelSistemaButton;
-
-    Usuarios PrincipalUser;
+    private JMenuItem VentasJMI;
+    private JMenuItem BodegaJMI;
+    private JMenuItem UsuariosJMI;
 
     public sistema() {
         frameInit();
         this.setContentPane(principalPanel);
-        this.setTitle("Ventana principal del sistema ");
+        this.setTitle("Ventana Principal Farmacia MCTJ");
         this.setSize(880,420);
         //this.setResizable(false); //Evita el redimendisionamiento de la pantalla, al ser usada
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -38,12 +39,6 @@ public class sistema extends JFrame {
             }
         });
 
-        //Mostrar datos del Usuario que inicio sesión
-        /*codUserL.setText(String.valueOf(PrincipalUser.getCodUser()));
-        nomUserL.setText(PrincipalUser.getNombre());
-        mailUserL.setText(PrincipalUser.getMail());
-        celUserL.setText(PrincipalUser.getCelular());
-        tipoUserL.setText(PrincipalUser.getTipoUser());*/
         salirDelSistemaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,47 +47,39 @@ public class sistema extends JFrame {
                 sistema.this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             }
         });
-    }
 
-   /* private Usuarios obtenerDatos(String email, String password, String rol){
-        String nombre, mail, celular, rolUser;
-        int cod;
-        Usuarios user = null;
-
-        final String DB_URL="jdbc:mysql://localhost/farmacia?serverTimezon=UTC";
-        final String USERNAME="root";
-        final String PASSWORD="";
-
-        try{
-
-            Connection conn = DriverManager.getConnection(DB_URL,USERNAME, PASSWORD); //conector MYSQL
-            Statement stnt = conn.createStatement();
-            String sql="SELECT * FROM usuarios WHERE EMAILUSER=? AND CLAVEUSER=? AND CODROL=(SELECT CODROL FROM roles WHERE NOMROL=? )";
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            //System.out.println("conexion ok");
-            ResultSet resultSet= preparedStatement.executeQuery();
-
-            if(resultSet.next()){
-                user = new Usuarios();
-                user.nombre = resultSet.getString("NOMUSER");
-                user.mail=resultSet.getString("EMAILUSER");
-                user.celular=resultSet.getString("CELLUSER");
-                user.codUser=resultSet.getInt("CODUSER");
-                user.clave=resultSet.getString("CLAVEUSER");
-                user.tipoUser=resultSet.getString("CODROL");
+        VentasJMI.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sistema.this.dispose();
+                sistema.this.setVisible(false);
+                Ventas ventas= new Ventas();
+                ventas.setVisible(true);
             }
-            stnt.close();
-            conn.close();
-
-        } catch (Exception e){
-            System.out.println("error de ...");
-            e.printStackTrace();
-        }
-
-        return user;
-    }*/
+        });
+        BodegaJMI.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sistema.this.dispose();
+                sistema.this.setVisible(false);
+                Ventas ventas= new Ventas();
+                ventas.setVisible(true);
+            }
+        });
+        UsuariosJMI.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sistema.this.dispose();
+                sistema.this.setVisible(false);
+                Ventas ventas= new Ventas();
+                ventas.setVisible(true);
+            }
+        });
+    }
 
     public static void main(String[] args) {
         sistema sist= new sistema();
     }
+
+
 }

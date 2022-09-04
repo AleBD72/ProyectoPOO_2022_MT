@@ -56,4 +56,5 @@ public class Usuarios {
     public void setTipoUser(String tipoUser) {
         this.tipoUser = tipoUser;
     }
+
 }

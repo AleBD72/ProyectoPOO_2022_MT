@@ -28,32 +28,11 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="5a407" class="javax.swing.JMenuItem">
+              <component id="5a407" class="javax.swing.JMenuItem" binding="VentasJMI">
                 <constraints/>
                 <properties>
                   <font name="Quicksand Medium" size="12" style="0"/>
-                  <text value="Ventas"/>
-                </properties>
-              </component>
-              <component id="d6833" class="javax.swing.JMenuItem">
-                <constraints/>
-                <properties>
-                  <font name="Quicksand Medium" size="12" style="0"/>
-                  <text value="Nueva Venta"/>
-                </properties>
-              </component>
-              <component id="94547" class="javax.swing.JMenuItem">
-                <constraints/>
-                <properties>
-                  <font name="Quicksand Medium" size="12" style="0"/>
-                  <text value="Clientes"/>
-                </properties>
-              </component>
-              <component id="63416" class="javax.swing.JMenuItem">
-                <constraints/>
-                <properties>
-                  <font name="Quicksand Medium" size="12" style="0"/>
-                  <text value="Productos"/>
+                  <text value="Administrar Ventas"/>
                 </properties>
               </component>
             </children>
@@ -68,7 +47,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="e7ec0" class="javax.swing.JMenuItem">
+              <component id="e7ec0" class="javax.swing.JMenuItem" binding="BodegaJMI">
                 <constraints/>
                 <properties>
                   <font name="Quicksand Medium" size="12" style="0"/>
@@ -87,7 +66,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="3397a" class="javax.swing.JMenuItem">
+              <component id="3397a" class="javax.swing.JMenuItem" binding="UsuariosJMI">
                 <constraints/>
                 <properties>
                   <font name="Quicksand Medium" size="12" style="0"/>
