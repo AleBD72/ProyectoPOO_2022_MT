@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-09-2022 a las 04:15:19
+-- Tiempo de generación: 04-09-2022 a las 21:17:49
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -31,10 +31,33 @@ CREATE TABLE `cab__nvtas` (
   `CODNV` int(11) NOT NULL,
   `CODUSER` int(11) NOT NULL,
   `NOMCLIENTE` varchar(50) NOT NULL,
-  `CELLCLIENTE` varchar(10) DEFAULT NULL,
-  `EMAILCLIENTE` varchar(30) DEFAULT NULL,
-  `FECHANV` date NOT NULL
+  `TOTALNV` varchar(30) DEFAULT NULL,
+  `FECHANV` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `IDCLI` int(11) NOT NULL,
+  `CEDULACL` int(10) NOT NULL,
+  `NOMCLI` varchar(50) NOT NULL,
+  `CELCLI` varchar(10) NOT NULL,
+  `MAILCLI` varchar(65) DEFAULT NULL,
+  `FECHACLI` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`IDCLI`, `CEDULACL`, `NOMCLI`, `CELCLI`, `MAILCLI`, `FECHACLI`) VALUES
+(1, 1724567389, 'Camila Mier', '0992718380', '', '2022-09-04 11:03:51'),
+(2, 1724567381, 'Felipe Pazmiño', '0992714563', '', '2022-09-04 11:15:25'),
+(3, 1705536314, 'Diego Perdomo', '0992718345', 'diego@gmail.com', '2022-09-04 12:02:03');
 
 -- --------------------------------------------------------
 
@@ -48,6 +71,20 @@ CREATE TABLE `det_nvtas` (
   `CODPROD` int(11) NOT NULL,
   `CANTPROD` int(11) NOT NULL,
   `TOTALNV` decimal(4,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empresa`
+--
+
+CREATE TABLE `empresa` (
+  `IDEMP` int(11) NOT NULL,
+  `NOMEMP` varchar(60) NOT NULL,
+  `RUCEMP` int(13) NOT NULL,
+  `TELFEMP` int(10) DEFAULT NULL,
+  `DIRECEMP` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -221,8 +258,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`CODROL`, `NOMROL`) VALUES
 ('ADM', 'Administrador'),
-('BOD', 'Bodeguero'),
-('CAJ', 'Cajero');
+('CAJ', 'Cajero'),
+('JBD', 'Bodeguero');
 
 -- --------------------------------------------------------
 
@@ -244,9 +281,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`CODUSER`, `CODROL`, `NOMUSER`, `EMAILUSER`, `CELLUSER`, `CLAVEUSER`) VALUES
-(1, 'ADM', 'Alverto Armas', 'alver@hotmail.com', '0945167823', 'alverto'),
-(2, 'CAJ', 'Sandra Morales', 'sandram@hotmail.com', '0987954032', 'sandra'),
-(3, 'BOD', 'Sebastian Rivas', 'sebas@hotmail.com', '0998745603', 'sebas');
+(1, 'ADM', 'Camila Mier', 'camilamier@epn.edu.ec', '0992718388', '123'),
+(2, 'CAJ', 'Jhon Torres', 'jhontorres@epn.edu.ec', '0992717856', '123');
 
 --
 -- Índices para tablas volcadas
@@ -260,12 +296,24 @@ ALTER TABLE `cab__nvtas`
   ADD KEY `FK_USER_CABECERA` (`CODUSER`);
 
 --
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`IDCLI`);
+
+--
 -- Indices de la tabla `det_nvtas`
 --
 ALTER TABLE `det_nvtas`
   ADD PRIMARY KEY (`CODDET`),
   ADD KEY `FK_DET_NVTAS` (`CODPROD`),
   ADD KEY `FK_NVTA_PRODUCTOS2` (`CODNV`);
+
+--
+-- Indices de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD PRIMARY KEY (`IDEMP`);
 
 --
 -- Indices de la tabla `productos`
@@ -291,16 +339,22 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `cab__nvtas`
+-- AUTO_INCREMENT de la tabla `clientes`
 --
-ALTER TABLE `cab__nvtas`
-  MODIFY `CODNV` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `clientes`
+  MODIFY `IDCLI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `det_nvtas`
 --
 ALTER TABLE `det_nvtas`
   MODIFY `CODDET` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `IDEMP` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -312,7 +366,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `CODUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `CODUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
