@@ -66,7 +66,8 @@ public class login extends JFrame{
                 user = getAuthenticationUser(email, password, rol);
 
                 if(user != null){
-                    sistema ventana2 = new sistema();
+                    sistema ventana2 = new sistema(user.codUser, user.tipoUser, user.nombre, user.mail, user.celular);
+
                     setVisible(true);
                     dispose();
                 }

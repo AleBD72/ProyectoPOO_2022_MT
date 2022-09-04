@@ -25,7 +25,7 @@
           <grid id="d8c7f" layout-manager="GridLayoutManager" row-count="5" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Ventas"/>
+              <tabbedpane title="Generar Venta"/>
             </constraints>
             <properties>
               <background color="-328961"/>
@@ -220,7 +220,7 @@
               </component>
             </children>
           </grid>
-          <grid id="6be27" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="6be27" layout-manager="GridLayoutManager" row-count="8" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Clientes"/>
@@ -232,7 +232,7 @@
             <children>
               <component id="4ff8f" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Montserrat" size="12" style="0"/>
@@ -242,12 +242,12 @@
               </component>
               <vspacer id="fbae6">
                 <constraints>
-                  <grid row="4" column="0" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <grid row="5" column="0" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
               <component id="24899" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Montserrat" size="12" style="0"/>
@@ -257,7 +257,7 @@
               </component>
               <component id="f4e91" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Montserrat" size="12" style="0"/>
@@ -267,7 +267,7 @@
               </component>
               <component id="245d7" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Montserrat" size="12" style="0"/>
@@ -277,7 +277,7 @@
               </component>
               <component id="77e99" class="javax.swing.JTextField" binding="dniCliTF">
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -287,7 +287,7 @@
               </component>
               <component id="47996" class="javax.swing.JTextField" binding="nomCliTF">
                 <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -297,7 +297,7 @@
               </component>
               <component id="26355" class="javax.swing.JTextField" binding="celTF">
                 <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -307,7 +307,7 @@
               </component>
               <component id="7d838" class="javax.swing.JTextField" binding="mailTF">
                 <constraints>
-                  <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -317,7 +317,7 @@
               </component>
               <scrollpane id="726cf">
                 <constraints>
-                  <grid row="0" column="3" row-span="4" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="3" row-span="5" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Montserrat" size="12" style="0"/>
@@ -334,7 +334,7 @@
               </scrollpane>
               <component id="20cfc" class="javax.swing.JButton" binding="guardarBT">
                 <constraints>
-                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <borderPainted value="false"/>
@@ -344,7 +344,7 @@
               </component>
               <component id="185f4" class="javax.swing.JButton" binding="actualizarBT">
                 <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <borderPainted value="false"/>
@@ -352,9 +352,9 @@
                   <text value="Actualizar"/>
                 </properties>
               </component>
-              <component id="d7fc6" class="javax.swing.JButton" binding="eliminarBT">
+              <component id="d7fc6" class="javax.swing.JButton" binding="eliminarCliBT">
                 <constraints>
-                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <borderPainted value="false"/>
@@ -362,14 +362,54 @@
                   <text value="Eliminar"/>
                 </properties>
               </component>
-              <component id="a1fed" class="javax.swing.JButton" binding="nuevoBT">
+              <component id="a1fed" class="javax.swing.JButton" binding="buscarBT">
                 <constraints>
-                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <borderPainted value="false"/>
                   <font name="Poppins Medium" size="12" style="0"/>
-                  <text value="Nuevo"/>
+                  <text value="Buscar"/>
+                </properties>
+              </component>
+              <component id="dbcdc" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                  <foreground color="-16633785"/>
+                  <text value="IDCLI"/>
+                </properties>
+              </component>
+              <component id="78ba2" class="javax.swing.JTextField" binding="idCliTF">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
+              </component>
+              <component id="55c8" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Montserrat" size="10" style="0"/>
+                  <foreground color="-14639429"/>
+                  <text value="En el caso de que desee guardar un nuevo cliente no debe ingresar el campo de IDCLI"/>
+                </properties>
+              </component>
+              <component id="d7b8c" class="javax.swing.JButton" binding="limpiarButton" default-binding="true">
+                <constraints>
+                  <grid row="7" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Limpiar"/>
                 </properties>
               </component>
             </children>
@@ -560,7 +600,7 @@
                 <properties>
                   <font name="Quicksand Light" size="28" style="1"/>
                   <foreground color="-228096"/>
-                  <text value="Datos de la Farmacia"/>
+                  <text value="Editar Datos de la Farmacia"/>
                 </properties>
               </component>
               <component id="1c526" class="javax.swing.JLabel">
@@ -679,7 +719,7 @@
           <font name="Quicksand Light" size="32" style="1"/>
           <foreground color="-228096"/>
           <icon value="Images/sales.png"/>
-          <text value="Farmacia CMTJ"/>
+          <text value="Ventas Farmacia CMTJ"/>
         </properties>
       </component>
       <hspacer id="a60e3">

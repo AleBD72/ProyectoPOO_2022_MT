@@ -19,8 +19,9 @@ public class sistema extends JFrame {
     private JMenuItem BodegaJMI;
     private JMenuItem UsuariosJMI;
 
-    public sistema() {
+    public sistema(int cod, String rol, String nombre, String email, String cell ) {
         frameInit();
+        ModificarCampos(cod,rol, nombre, email, cell);
         this.setContentPane(principalPanel);
         this.setTitle("Ventana Principal Farmacia MCTJ");
         this.setSize(880,420);
@@ -75,10 +76,20 @@ public class sistema extends JFrame {
                 ventas.setVisible(true);
             }
         });
+
+
+    }
+
+    public void ModificarCampos (int cod, String rol, String nombre, String email, String cell){
+        codUserL.setText(""+cod);
+        nomUserL.setText(nombre);
+        mailUserL.setText(email);
+        celUserL.setText(cell);
+        tipoUserL.setText(rol);
     }
 
     public static void main(String[] args) {
-        sistema sist= new sistema();
+        sistema sist= new sistema(0, null, null,null,null);
     }
 
 
