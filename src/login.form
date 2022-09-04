@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="login">
+  <grid id="27dc6" binding="loginPanel" layout-manager="GridLayoutManager" row-count="12" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="713" height="477"/>
+    </constraints>
+    <properties>
+      <background color="-328961"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="12a62" class="javax.swing.JButton" binding="salirBT">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <enabled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Poppins SemiBold" size="12"/>
+          <foreground color="-16633785"/>
+          <icon value="Images/logout.png"/>
+          <text value="Salir"/>
+        </properties>
+      </component>
+      <component id="2c2a7" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="1" row-span="7" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <icon value="Images/drugs (2).png"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="f7dd0" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Quicksand Light" size="14" style="1"/>
+          <foreground color="-16633785"/>
+          <text value="Email"/>
+        </properties>
+      </component>
+      <component id="c257f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Quicksand Light" size="14" style="1"/>
+          <foreground color="-16633785"/>
+          <text value="Password"/>
+        </properties>
+      </component>
+      <component id="13f65" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Quicksand Light" size="14" style="1"/>
+          <foreground color="-16633785"/>
+          <text value="Tipo de usuario"/>
+        </properties>
+      </component>
+      <component id="f6e92" class="javax.swing.JComboBox" binding="usuarioTipoCB">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1970186"/>
+          <font name="Poppins Light" size="12" style="0"/>
+          <foreground color="-16776959"/>
+        </properties>
+      </component>
+      <component id="fc1d9" class="javax.swing.JTextField" binding="mailTF">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Poppins Light" size="12" style="0"/>
+          <foreground color="-16776959"/>
+        </properties>
+      </component>
+      <grid id="f5f9b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="5" row-span="9" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="d39eb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="24" height="41"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="bf2c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="11" column="1" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="ba2dc" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="12" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-328961"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <component id="93caf" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Quicksand Light" size="28" style="1"/>
+          <foreground color="-16633785"/>
+          <text value="Farmacia MCTJ"/>
+        </properties>
+      </component>
+      <component id="f6bbb" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Montserrat" size="26" style="0"/>
+          <foreground color="-16633785"/>
+          <text value="Login"/>
+        </properties>
+      </component>
+      <vspacer id="81210">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="bc6ee">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="b30c8">
+        <constraints>
+          <grid row="9" column="3" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="82662" class="javax.swing.JButton" binding="ingresarLBT">
+        <constraints>
+          <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14639429"/>
+          <borderPainted value="false"/>
+          <font name="Quicksand Medium" size="14" style="0"/>
+          <text value="Ingresar"/>
+        </properties>
+      </component>
+      <component id="8beb1" class="javax.swing.JButton" binding="cancelarLBT">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-228096"/>
+          <borderPainted value="false"/>
+          <font name="Quicksand Medium" size="14" style="0"/>
+          <text value="Cancelar"/>
+        </properties>
+      </component>
+      <component id="a7d17" class="javax.swing.JPasswordField" binding="passwordPF">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Poppins Light" size="12" style="0"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
