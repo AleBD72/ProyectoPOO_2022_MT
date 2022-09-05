@@ -137,7 +137,7 @@ public class Ventas extends JFrame{
         limpiarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Limpiar();
             }
         });
     }
@@ -147,6 +147,15 @@ public class Ventas extends JFrame{
     }
 
     //Funciones de los botones Jtabbed Pane
+
+    //Limpieza de campos
+    public void Limpiar(){
+        idCliTF.setText(null);
+        dniCliTF.setText(null);
+        nomCliTF.setText(null);
+        celTF.setText(null);
+        mailTF.setText(null);
+    }
 
     //FUNCIONES CLIENTES
     //FUNCIÓN REGISTRAR UN CLIENTE
@@ -389,7 +398,7 @@ public class Ventas extends JFrame{
             e.printStackTrace();
         }
     }
-    
+
 
     //Conexión
     public void Connect(){
