@@ -734,7 +734,7 @@
           <font name="Quicksand Light" size="32" style="1"/>
           <foreground color="-228096"/>
           <icon value="Images/sales.png"/>
-          <text value="Ventas Farmacia CMTJ"/>
+          <text value="Ventas Farmacia MCTJ"/>
         </properties>
       </component>
       <hspacer id="a60e3">

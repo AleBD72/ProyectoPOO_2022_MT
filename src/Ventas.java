@@ -72,7 +72,7 @@ public class Ventas extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Ventas.this.dispose();
                 Ventas.this.setVisible(false);
-                sistema sistema1 = new sistema(user.codUser, user.tipoUser, user.nombre, user.mail, user.celular);
+                sistema sistema1 = new sistema();
                 sistema1.setVisible(true);
             }
         });
@@ -224,8 +224,6 @@ public class Ventas extends JFrame{
                 nomCliTF.setText(nombre);
                 celTF.setText(rcelu);
                 mailTF.setText(mail);
-                System.out.println(cedulaCl+nombre+rcelu+mail);
-                System.out.println();
 
             }
             else {

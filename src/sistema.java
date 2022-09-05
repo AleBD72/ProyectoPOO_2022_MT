@@ -1,3 +1,4 @@
+import Clases.UserGeneral;
 import Clases.Usuarios;
 
 import javax.swing.*;
@@ -19,9 +20,9 @@ public class sistema extends JFrame {
     private JMenuItem BodegaJMI;
     private JMenuItem UsuariosJMI;
 
-    public sistema(int cod, String rol, String nombre, String email, String cell ) {
+    public sistema() {
         frameInit();
-        ModificarCampos(cod,rol, nombre, email, cell);
+        ModificarCampos();
         this.setContentPane(principalPanel);
         this.setTitle("Ventana Principal Farmacia MCTJ");
         this.setSize(880,420);
@@ -80,16 +81,16 @@ public class sistema extends JFrame {
 
     }
 
-    public void ModificarCampos (int cod, String rol, String nombre, String email, String cell){
-        codUserL.setText(""+cod);
-        nomUserL.setText(nombre);
-        mailUserL.setText(email);
-        celUserL.setText(cell);
-        tipoUserL.setText(rol);
+    public void ModificarCampos (){
+        codUserL.setText(UserGeneral.getCodigoUser());
+        nomUserL.setText(UserGeneral.getNombreUser());
+        mailUserL.setText(UserGeneral.getEmailUser());
+        celUserL.setText(UserGeneral.getCellUser());
+        tipoUserL.setText(UserGeneral.getRolUser());
     }
 
     public static void main(String[] args) {
-        sistema sist= new sistema(0, null, null,null,null);
+        sistema sist= new sistema();
     }
 
 

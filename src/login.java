@@ -1,3 +1,4 @@
+import Clases.UserGeneral;
 import Clases.Usuarios;
 import Clases.conexionCombo;
 import Clases.Roles;
@@ -66,7 +67,7 @@ public class login extends JFrame{
                 user = getAuthenticationUser(email, password, rol);
 
                 if(user != null){
-                    sistema ventana2 = new sistema(user.codUser, user.tipoUser, user.nombre, user.mail, user.celular);
+                    sistema ventana2 = new sistema();
 
                     setVisible(true);
                     dispose();
@@ -124,6 +125,14 @@ public class login extends JFrame{
                 user.codUser=resultSet.getInt("CODUSER");
                 user.clave=resultSet.getString("CLAVEUSER");
                 user.tipoUser=resultSet.getString("CODROL");
+
+
+                UserGeneral.codigoUser = String.valueOf(user.codUser);
+                UserGeneral.nombreUser = user.nombre;
+                UserGeneral.emailUser = user.mail;
+                UserGeneral.cellUser = user.celular;
+                UserGeneral.rolUser = user.tipoUser;
+
             }
             stnt.close();
             conn.close();
