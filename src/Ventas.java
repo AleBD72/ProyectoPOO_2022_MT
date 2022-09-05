@@ -61,17 +61,17 @@ public class Ventas extends JFrame{
     private JPanel ConfFarmPanel;
 
     public Ventas() {
-        Usuarios user = new Usuarios();
+        //Usuarios user = new Usuarios();
         frameInit();
         this.setContentPane(ventasPanel);
         this.setTitle("Ventas Farmacia MCTJ ");
-        this.setSize(990,390);
+        this.setSize(1030,410);
         //this.setResizable(false); //Evita el redimendisionamiento de la pantalla, al ser usada
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setLocationRelativeTo(null); // centrar la pantalla
 
-        //llmado a tablas
+        //llamado a tablas
         CargarTablaProductos();
         CargarTablaClientes();
         volverBT.addActionListener(new ActionListener() {

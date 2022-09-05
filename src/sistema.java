@@ -38,7 +38,7 @@ public class sistema extends JFrame {
             BodegaPanel.setVisible(false);
             AdminPanel.setVisible(false);
         }
-        else if (UserGeneral.rolUser.equals("BOD")){
+        else if (UserGeneral.rolUser.equals("JBD")){
             System.out.println("en condicion BOD");
             VtasPanel.setVisible(false);
             AdminPanel.setVisible(false);
@@ -92,8 +92,8 @@ public class sistema extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 sistema.this.dispose();
                 sistema.this.setVisible(false);
-                Ventas ventas= new Ventas();
-                ventas.setVisible(true);
+                Administracion user= new Administracion();
+                user.setVisible(true);
             }
         });
 
