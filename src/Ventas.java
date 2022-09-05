@@ -147,6 +147,12 @@ public class Ventas extends JFrame{
                 Limpiar();
             }
         });
+        buscarProdBT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -314,8 +320,55 @@ public class Ventas extends JFrame{
     }
 
     public void limpiarCamposCli(){
-
+        dniCliTF.setText(null);
+        nomCliTF.setText(null);
+        celTF.setText(null);
+        mailTF.setText(null);
     }
+
+    /*public void Buscar(){
+        String cod="0";
+        cod=textId.getText();
+
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
+        final String USERNAME="root";
+        final String PASSWORD="";
+
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT * FROM productos where CODPROD=?";
+            PreparedStatement pst=conn.prepareStatement(sql);
+            pst.setString(1,cod);
+            //System.out.println(sql);
+
+            ResultSet rs = pst.executeQuery(); //select
+
+            if (rs.next()==true){ //no esta vacio
+                String nombre, cantidad, precio;
+                nombre=rs.getString(2); // 1 es el id
+                cantidad=rs.getString(3);
+                precio=rs.getString(4);
+
+                //System.out.println();
+                textNombre.setText(nombre);
+                textPrecio.setText(precio);
+                textCantidad.setText(cantidad);
+            }
+            else {
+                //textMensaje.setText("No se ha encontrado el producto");
+                JOptionPane.showMessageDialog(null, "No se ha encontrado el producto");
+                Limpiar();
+            }
+
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+            System.out.println("SQL incorrecto");
+        }
+    }*/
 
 
     //Cargar Tablas
