@@ -375,7 +375,7 @@ public class Administracion extends JFrame{
         }
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Administracion adm= new Administracion();
-    }
+    }*/
 }
