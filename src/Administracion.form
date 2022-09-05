@@ -207,7 +207,7 @@
                 </constraints>
                 <properties>
                   <font name="Poppins Medium" size="12" style="0"/>
-                  <text value="Crear"/>
+                  <text value="Guardar"/>
                 </properties>
               </component>
               <component id="fa230" class="javax.swing.JButton" binding="editarUButton">
