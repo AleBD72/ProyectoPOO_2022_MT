@@ -1,3 +1,4 @@
+import Clases.UserGeneral;
 import Clases.Usuarios;
 
 import javax.swing.*;
@@ -53,6 +54,11 @@ public class Ventas extends JFrame{
     private JTextField telfFarTF;
     private JTextField idCliTF;
     private JButton limpiarButton;
+    private JPanel GVtaPanel;
+    private JPanel CliPanel;
+    private JPanel ProdPanel;
+    private JPanel VtasPanel;
+    private JPanel ConfFarmPanel;
 
     public Ventas() {
         Usuarios user = new Usuarios();
@@ -64,6 +70,7 @@ public class Ventas extends JFrame{
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setLocationRelativeTo(null); // centrar la pantalla
+
         //llmado a tablas
         CargarTablaProductos();
         CargarTablaClientes();

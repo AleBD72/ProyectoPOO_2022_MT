@@ -19,6 +19,9 @@ public class sistema extends JFrame {
     private JMenuItem VentasJMI;
     private JMenuItem BodegaJMI;
     private JMenuItem UsuariosJMI;
+    private JMenu VtasPanel;
+    private JMenu BodegaPanel;
+    private JMenu AdminPanel;
 
     public sistema() {
         frameInit();
@@ -28,6 +31,22 @@ public class sistema extends JFrame {
         this.setSize(880,420);
         //this.setResizable(false); //Evita el redimendisionamiento de la pantalla, al ser usada
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        //PRIVILEGIOS
+        if (UserGeneral.rolUser.equals("CAJ")){
+            System.out.println("en condicion CAJ");
+            BodegaPanel.setVisible(false);
+            AdminPanel.setVisible(false);
+        }
+        else if (UserGeneral.rolUser.equals("BOD")){
+            System.out.println("en condicion BOD");
+            VtasPanel.setVisible(false);
+            AdminPanel.setVisible(false);
+        }
+        else {
+            System.out.println(UserGeneral.rolUser.length());
+            System.out.println(UserGeneral.rolUser);
+        }
         this.setVisible(true);
         this.setLocationRelativeTo(null); // centrar la pantalla
 
