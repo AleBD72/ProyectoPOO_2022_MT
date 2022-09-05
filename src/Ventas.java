@@ -205,19 +205,19 @@ public class Ventas extends JFrame{
                 }
             }
         });
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("CODIGO");
+        model.addColumn("NOMBRE PROD.");
+        model.addColumn("CANTIDA");
+        model.addColumn("PRECIO");
+        model.addColumn("TOTAL");
         cantiTF.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 //Tabla de venta prod
 
-                DefaultTableModel model = new DefaultTableModel();
-                model.addColumn("CODIGO");
-                model.addColumn("NOMBRE PROD.");
-                model.addColumn("CANTIDA");
-                model.addColumn("PRECIO");
-                model.addColumn("TOTAL");
-                //ventasT.setModel(model);
+                ventasT.setModel(model);
 
                 if(e.getKeyCode()== KeyEvent.VK_ENTER){
                     if(!"".equals(cantiTF.getText())){
@@ -229,7 +229,7 @@ public class Ventas extends JFrame{
                         int stock= Integer.parseInt(stockTF.getText());
                         if(stock >= cantidad) {
                             item = item + 1;
-                            model = (DefaultTableModel) ventasT.getModel();
+                            //model = (DefaultTableModel) ventasT.getModel();
                             ArrayList lista = new ArrayList<>();
                             lista.add(item);
                             lista.add(cod);
@@ -246,7 +246,6 @@ public class Ventas extends JFrame{
                             O[4] = lista.get(5);
 
                             model.addRow(new Object[]{O[0],O[1],O[2],O[3],O[4]});
-                            ventasT.setModel(model);
                             System.out.println(cantidad);
 
                         } else{
