@@ -1,6 +1,7 @@
 import Clases.Producto;
 import Clases.UserGeneral;
 import Clases.Usuarios;
+import com.mysql.cj.xdevapi.Table;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -12,10 +13,12 @@ import java.sql.Connection;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class Ventas extends JFrame{
 
-
+    int item;
     private JTabbedPane tabbedPane1;
     private JPanel ventasPanel;
     private JButton SalirSistemaBT;
@@ -64,6 +67,7 @@ public class Ventas extends JFrame{
     private JButton limpiarPdBT;
 
     Producto pro= new Producto();
+
 
 
 
@@ -199,6 +203,61 @@ public class Ventas extends JFrame{
                         codVentaTF.requestFocus();
                     }
                 }
+            }
+        });
+        cantiTF.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                //Tabla de venta prod
+
+                DefaultTableModel model = new DefaultTableModel();
+                model.addColumn("CODIGO");
+                model.addColumn("NOMBRE PROD.");
+                model.addColumn("CANTIDA");
+                model.addColumn("PRECIO");
+                model.addColumn("TOTAL");
+                //ventasT.setModel(model);
+
+                if(e.getKeyCode()== KeyEvent.VK_ENTER){
+                    if(!"".equals(cantiTF.getText())){
+                        String cod= codVentaTF.getText();
+                        String nombre = prodTF.getText();
+                        int cantidad=Integer.parseInt(cantiTF.getText());
+                        double precio=Double.parseDouble(precioTF.getText());
+                        Double total= cantidad*precio;
+                        int stock= Integer.parseInt(stockTF.getText());
+                        if(stock >= cantidad) {
+                            item = item + 1;
+                            model = (DefaultTableModel) ventasT.getModel();
+                            ArrayList lista = new ArrayList<>();
+                            lista.add(item);
+                            lista.add(cod);
+                            lista.add(nombre);
+                            lista.add(cantidad);
+                            lista.add(precio);
+                            lista.add(total);
+
+                            Object[] O = new Object[5];
+                            O[0] = lista.get(1);
+                            O[1] = lista.get(2);
+                            O[2] = lista.get(3);
+                            O[3] = lista.get(4);
+                            O[4] = lista.get(5);
+
+                            model.addRow(new Object[]{O[0],O[1],O[2],O[3],O[4]});
+                            ventasT.setModel(model);
+                            System.out.println(cantidad);
+
+                        } else{
+                            JOptionPane.showMessageDialog(null, "Stock no disponible (Cantidad supera el Stock)");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Ingrese cantidad");
+                    }
+
+                }
+
             }
         });
     }
@@ -427,6 +486,37 @@ public class Ventas extends JFrame{
         }
     }
 
+    //Método actualizar Stock
+    public void ActualizarStock(String cod, int cantidad){
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC";
+        final String USERNAME="root";
+        final String PASSWORD="";
+
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            String sql = "UPDATE productos set STOCKPROD=? WHERE CODPROD=?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            if (cantidad >= 0){
+                pst.setString(1, String.valueOf(cantidad));
+                pst.setString(2, cod);
+                //ResultSet resultSet = pst.executeQuery(); //select
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Registro actualizado");
+                stmt.close();
+                conn.close();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "No se ha realizado la modificacion");
+            }
+
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+            System.out.println("SQL incorrecto");
+        }
+    }
 
     //Cargar Tablas
     public void CargarTablaClientes(){
