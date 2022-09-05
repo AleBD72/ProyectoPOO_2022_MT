@@ -30,7 +30,7 @@ Asignatura:
 
    - Ventas (Generar Venta, Consultar Clientes y Productos)
 
-      <img width="505" alt="image" src="https://user-images.githubusercontent.com/38541491/188497266-57bc5fce-12a7-4e80-a47f-16d252703371.png">
+      <img width="505" alt="image" src="https://user-images.githubusercontent.com/38541491/188509339-e2d79461-6141-4002-9afd-d3f78d0713de.png">
 
 ## Vista del perfil de Bodeguero
 
@@ -46,7 +46,8 @@ Asignatura:
    
    - Ventas (Generar Venta, Consultar Clientes y Productos)
 
-      <img width="505" alt="image" src="https://user-images.githubusercontent.com/38541491/188497266-57bc5fce-12a7-4e80-a47f-16d252703371.png">
+      <img width="505" alt="image" src="https://user-images.githubusercontent.com/38541491/188509339-e2d79461-6141-4002-9afd-d3f78d0713de.png">
+
 
    - Bodega (Visulizar y Administrar productos)
 
