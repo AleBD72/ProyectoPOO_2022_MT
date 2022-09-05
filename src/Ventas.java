@@ -59,6 +59,7 @@ public class Ventas extends JFrame{
     private JPanel ProdPanel;
     private JPanel VtasPanel;
     private JPanel ConfFarmPanel;
+    private JButton limpiarPdBT;
 
     public Ventas() {
         //Usuarios user = new Usuarios();
@@ -97,6 +98,7 @@ public class Ventas extends JFrame{
                 //Verificamos que los campos ingresados no estén vacios
                 if(!"".equals(dniCliTF.getText()) && !"".equals(nomCliTF.getText()) && !"".equals(celTF.getText())){
                     RegistrarCli();
+                    CargarTablaClientes();
                 } else {
                     JOptionPane.showMessageDialog(null,"Los campos están vacios");
                 }
@@ -111,6 +113,7 @@ public class Ventas extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 if(!"".equals(idCliTF.getText()) && !"".equals(dniCliTF.getText()) && !"".equals(nomCliTF.getText()) && !"".equals(celTF.getText())){
                     ActualizarCli();
+                    CargarTablaClientes();
                 } else {
                     JOptionPane.showMessageDialog(null,"Los campos están vacios");
                 }
@@ -136,6 +139,7 @@ public class Ventas extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 if(!"".equals(idCliTF.getText())){
                     BorrarCliente();
+                    CargarTablaClientes();
                 } else {
                     JOptionPane.showMessageDialog(null,"Los campos están vacios");
                 }
@@ -150,7 +154,17 @@ public class Ventas extends JFrame{
         buscarProdBT.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if(!"".equals(codProdTF.getText())){
+                    BuscarProd();
+                } else {
+                    JOptionPane.showMessageDialog(null,"Los campos están vacios");
+                }
+            }
+        });
+        limpiarPdBT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                limpiarCamposProd();
             }
         });
     }
@@ -326,9 +340,16 @@ public class Ventas extends JFrame{
         mailTF.setText(null);
     }
 
-    /*public void Buscar(){
+    public void limpiarCamposProd(){
+        codProdTF.setText(null);
+        nomProdTF.setText(null);
+        precioProdTF.setText(null);
+        stockProdTF.setText(null);
+    }
+
+    public void BuscarProd(){
         String cod="0";
-        cod=textId.getText();
+        cod=codProdTF.getText();
 
         final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
         final String USERNAME="root";
@@ -351,9 +372,9 @@ public class Ventas extends JFrame{
                 precio=rs.getString(4);
 
                 //System.out.println();
-                textNombre.setText(nombre);
-                textPrecio.setText(precio);
-                textCantidad.setText(cantidad);
+                nomProdTF.setText(nombre);
+                precioProdTF.setText(precio);
+                stockProdTF.setText(cantidad);
             }
             else {
                 //textMensaje.setText("No se ha encontrado el producto");
@@ -368,7 +389,7 @@ public class Ventas extends JFrame{
             ex.printStackTrace();
             System.out.println("SQL incorrecto");
         }
-    }*/
+    }
 
 
     //Cargar Tablas
