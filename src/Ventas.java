@@ -1,3 +1,4 @@
+import Clases.Producto;
 import Clases.UserGeneral;
 import Clases.Usuarios;
 
@@ -5,6 +6,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.*;
 import java.sql.PreparedStatement;
@@ -42,7 +45,6 @@ public class Ventas extends JFrame{
     private JTextField precioProdTF;
     private JTable productosT;
     private JButton buscarProdBT;
-    private JButton excelBT;
     private JTable clientesT;
     private JTable ventasGuardadasT;
     private JButton generarNotaDeVentaBT;
@@ -60,6 +62,10 @@ public class Ventas extends JFrame{
     private JPanel VtasPanel;
     private JPanel ConfFarmPanel;
     private JButton limpiarPdBT;
+
+    Producto pro= new Producto();
+
+
 
     public Ventas() {
         //Usuarios user = new Usuarios();
@@ -165,6 +171,34 @@ public class Ventas extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 limpiarCamposProd();
+            }
+        });
+        codVentaTF.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                if(e.getKeyCode()== KeyEvent.VK_ENTER){
+                    if (!"".equals(codVentaTF.getText())){
+                        String cod=codVentaTF.getText();
+                        BuscarPro(cod);
+                        if ( Producto.getNombre() != null){
+                            prodTF.setText(""+Producto.getNombre());
+                            precioTF.setText(""+Producto.getPrecio());
+                            stockTF.setText(""+Producto.getStock());
+                            cantiTF.requestFocus();
+                            System.out.println(Producto.getNombre()+Producto.getStock());
+                        }else {
+                            codVentaTF.setText("");
+                            prodTF.setText("");
+                            precioTF.setText("");
+                            stockProdTF.setText("");
+                            codVentaTF.requestFocus();
+                        }
+                    } else{
+                        JOptionPane.showMessageDialog(null, "Ingrese el código del producto");
+                        codVentaTF.requestFocus();
+                    }
+                }
             }
         });
     }
@@ -307,6 +341,8 @@ public class Ventas extends JFrame{
         }
 
     }
+
+
 
     public void BorrarCliente(){
         String borrarId=idCliTF.getText();
@@ -476,6 +512,31 @@ public class Ventas extends JFrame{
         } catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public Producto BuscarPro(String cod){
+        Producto producto= new Producto();
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
+        final String USERNAME="root";
+        final String PASSWORD="";
+        String sql="SELECT * FROM productos WHERE CODPROD=?";
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1,cod);
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                Producto.setCod(rs.getString("CODPROD"));
+                Producto.setNombre(rs.getString("NOMPROD"));
+                Producto.setPrecio(rs.getDouble("PRECIOPROD"));
+                Producto.setStock(rs.getInt("STOCKPROD"));
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+
+        return producto;
     }
 
 

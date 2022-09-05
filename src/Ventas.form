@@ -44,7 +44,7 @@
               </component>
               <component id="f982c" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Montserrat" size="12" style="0"/>
@@ -84,19 +84,23 @@
               </component>
               <component id="1b3a5" class="javax.swing.JTextField" binding="codVentaTF">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
               </component>
               <component id="1a97e" class="javax.swing.JTextField" binding="prodTF">
                 <constraints>
-                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
+                  <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
               </component>
               <component id="11d41" class="javax.swing.JTextField" binding="cantiTF">
                 <constraints>
@@ -104,7 +108,9 @@
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
               </component>
               <component id="8aa48" class="javax.swing.JTextField" binding="precioTF">
                 <constraints>
@@ -114,6 +120,7 @@
                 </constraints>
                 <properties>
                   <editable value="false"/>
+                  <font name="Montserrat" size="12" style="0"/>
                 </properties>
               </component>
               <component id="fce4b" class="javax.swing.JTextField" binding="stockTF">
@@ -122,7 +129,9 @@
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
               </component>
               <component id="f779b" class="javax.swing.JButton" binding="eliminaVentaBT">
                 <constraints>
@@ -196,7 +205,9 @@
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <font name="Montserrat" size="12" style="0"/>
+                </properties>
               </component>
               <component id="36927" class="javax.swing.JTextField" binding="nombreClienteTF">
                 <constraints>
@@ -206,6 +217,7 @@
                 </constraints>
                 <properties>
                   <editable value="false"/>
+                  <font name="Montserrat" size="12" style="0"/>
                 </properties>
               </component>
               <component id="d57bd" class="javax.swing.JButton" binding="generarBT">
@@ -215,7 +227,7 @@
                 <properties>
                   <borderPainted value="false"/>
                   <font name="Poppins SemiBold" size="12" style="0"/>
-                  <text value="Generar Venta"/>
+                  <text value="Generar Nota de Venta"/>
                 </properties>
               </component>
             </children>
@@ -554,26 +566,6 @@
                   <text value="Buscar"/>
                 </properties>
               </component>
-              <component id="f040d" class="javax.swing.JButton" binding="excelBT">
-                <constraints>
-                  <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <borderPainted value="false"/>
-                  <font name="Poppins Medium" size="12" style="0"/>
-                  <text value="Excel"/>
-                </properties>
-              </component>
-              <component id="332cf" class="javax.swing.JButton" binding="limpiarPdBT">
-                <constraints>
-                  <grid row="7" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <borderPainted value="false"/>
-                  <font name="Poppins Medium" size="12" style="0"/>
-                  <text value="Limpiar"/>
-                </properties>
-              </component>
               <vspacer id="9ec73">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -584,6 +576,16 @@
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="332cf" class="javax.swing.JButton" binding="limpiarPdBT">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <font name="Poppins Medium" size="12" style="0"/>
+                  <text value="Limpiar"/>
+                </properties>
+              </component>
             </children>
           </grid>
           <grid id="71371" binding="VtasPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
