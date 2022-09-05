@@ -83,8 +83,8 @@ public class sistema extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 sistema.this.dispose();
                 sistema.this.setVisible(false);
-                Ventas ventas= new Ventas();
-                ventas.setVisible(true);
+                Bodega bodega= new Bodega();
+                bodega.setVisible(true);
             }
         });
         UsuariosJMI.addActionListener(new ActionListener() {
