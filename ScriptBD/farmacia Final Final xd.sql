@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-09-2022 a las 21:17:49
+-- Tiempo de generación: 06-09-2022 a las 07:26:40
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -31,9 +31,29 @@ CREATE TABLE `cab__nvtas` (
   `CODNV` int(11) NOT NULL,
   `CODUSER` int(11) NOT NULL,
   `NOMCLIENTE` varchar(50) NOT NULL,
-  `TOTALNV` varchar(30) DEFAULT NULL,
+  `TOTALNV` double(4,2) DEFAULT NULL,
   `FECHANV` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cab__nvtas`
+--
+
+INSERT INTO `cab__nvtas` (`CODNV`, `CODUSER`, `NOMCLIENTE`, `TOTALNV`, `FECHANV`) VALUES
+(8, 2, 'Diego Perdomo', 14.24, '2022-09-05 21:46:05'),
+(9, 2, 'Diego Perdomo', 12.49, '2022-09-05 21:55:33'),
+(10, 1, 'Camila Mier', 5.82, '2022-09-05 22:35:01'),
+(11, 1, 'Diego Perdomo', 5.94, '2022-09-05 22:38:03'),
+(12, 2, 'Diego Perdomo', 8.86, '2022-09-05 22:41:00'),
+(13, 1, 'Camila Mier', 1.50, '2022-09-05 22:47:09'),
+(14, 1, 'Camila Mier', 62.05, '2022-09-05 22:51:45'),
+(15, 1, 'Diego Perdomo', 1.67, '2022-09-05 23:10:24'),
+(16, 1, 'Camila Mier', 12.09, '2022-09-05 23:13:50'),
+(17, 1, 'Diego Perdomo', 22.16, '2022-09-05 23:16:27'),
+(18, 1, 'Felipe Pazmiño', 0.69, '2022-09-05 23:17:46'),
+(19, 1, 'Diego Perdomo', 1.46, '2022-09-05 23:38:24'),
+(20, 1, 'Diego Perdomo', 1.46, '2022-09-05 23:55:35'),
+(21, 1, 'Diego Perdomo', 1.30, '2022-09-06 00:17:14');
 
 -- --------------------------------------------------------
 
@@ -57,7 +77,8 @@ CREATE TABLE `clientes` (
 INSERT INTO `clientes` (`IDCLI`, `CEDULACL`, `NOMCLI`, `CELCLI`, `MAILCLI`, `FECHACLI`) VALUES
 (1, 1724567389, 'Camila Mier', '0992718380', '', '2022-09-04 11:03:51'),
 (2, 1724567381, 'Felipe Pazmiño', '0992714563', '', '2022-09-04 11:15:25'),
-(3, 1705536314, 'Diego Perdomo', '0992718345', 'diego@gmail.com', '2022-09-04 12:02:03');
+(3, 1705536314, 'Diego Perdomo', '0992718345', 'diego@gmail.com', '2022-09-04 12:02:03'),
+(4, 1705536313, 'Jhon Torres', '0992718078', 'jhont@gmail.com', '2022-09-05 23:56:34');
 
 -- --------------------------------------------------------
 
@@ -72,6 +93,45 @@ CREATE TABLE `det_nvtas` (
   `CANTPROD` int(11) NOT NULL,
   `TOTALNV` decimal(4,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `det_nvtas`
+--
+
+INSERT INTO `det_nvtas` (`CODDET`, `CODNV`, `CODPROD`, `CANTPROD`, `TOTALNV`) VALUES
+(12, 8, 23, 5, '4.25'),
+(13, 8, 14, 1, '9.99'),
+(14, 9, 14, 1, '9.99'),
+(15, 9, 5, 2, '2.50'),
+(16, 10, 23, 4, '3.40'),
+(17, 10, 9, 2, '1.60'),
+(18, 10, 86, 2, '0.82'),
+(19, 11, 95, 2, '0.94'),
+(20, 11, 5, 4, '5.00'),
+(21, 12, 1, 2, '0.46'),
+(22, 12, 5, 4, '5.00'),
+(23, 12, 23, 4, '3.40'),
+(24, 13, 15, 2, '0.90'),
+(25, 13, 4, 3, '0.60'),
+(26, 14, 15, 2, '0.90'),
+(27, 14, 4, 56, '11.20'),
+(28, 14, 14, 5, '49.95'),
+(29, 15, 15, 2, '0.90'),
+(30, 15, 4, 3, '0.60'),
+(31, 15, 47, 1, '0.17'),
+(32, 16, 15, 2, '0.90'),
+(33, 16, 14, 1, '9.99'),
+(34, 16, 45, 4, '1.20'),
+(35, 17, 14, 2, '19.98'),
+(36, 17, 13, 7, '1.96'),
+(37, 17, 3, 1, '0.22'),
+(38, 18, 1, 3, '0.69'),
+(39, 19, 1, 2, '0.46'),
+(40, 19, 4, 5, '1.00'),
+(41, 20, 1, 2, '0.46'),
+(42, 20, 4, 5, '1.00'),
+(43, 21, 15, 2, '0.90'),
+(44, 21, 4, 2, '0.40');
 
 -- --------------------------------------------------------
 
@@ -105,10 +165,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`CODPROD`, `NOMPROD`, `STOCKPROD`, `PRECIOPROD`) VALUES
-(1, 'Aspirina 650 mg', 150, '0.23'),
+(1, 'Aspirina 650 mg', 143, '0.23'),
 (2, 'Apronax 400 mg', 500, '0.40'),
-(3, 'Omeprazol 20 mg', 401, '0.22'),
-(4, 'Paracetamol 500 mg', 640, '0.20'),
+(3, 'Omeprazol 20 mg', 400, '0.22'),
+(4, 'Paracetamol 500 mg', 628, '0.20'),
 (5, 'Talco 100 g', 42, '1.25'),
 (6, 'AMOXICILINA 500 mg', 402, '0.25'),
 (7, 'IBUPROFENO 400 mg', 452, '0.21'),
@@ -117,9 +177,9 @@ INSERT INTO `productos` (`CODPROD`, `NOMPROD`, `STOCKPROD`, `PRECIOPROD`) VALUES
 (10, 'LAMIVUDINA 50 mg', 240, '0.30'),
 (11, 'NEVIRAPINA 200 mg', 542, '0.25'),
 (12, 'DIDANOSINA 100 mg', 532, '0.17'),
-(13, 'EFAVIRENZ 200 mg', 420, '0.28'),
-(14, 'ALBENDAZOL TABLETA 200 mg', 105, '9.99'),
-(15, 'AMLODIPINO GENFAR 5 mg', 304, '0.45'),
+(13, 'EFAVIRENZ 200 mg', 413, '0.28'),
+(14, 'ALBENDAZOL TABLETA 200 mg', 103, '9.99'),
+(15, 'AMLODIPINO GENFAR 5 mg', 302, '0.45'),
 (16, 'FUROSEMIDA 40 mg', 302, '0.31'),
 (17, 'LORATADINA JARABE 5 mg/5 ml', 107, '0.28'),
 (18, 'TERBINAFINA 250 mg', 98, '0.41'),
@@ -238,8 +298,7 @@ INSERT INTO `productos` (`CODPROD`, `NOMPROD`, `STOCKPROD`, `PRECIOPROD`) VALUES
 (131, 'RIFADEX 300 mg CÁPSULAS', 37, '0.35'),
 (132, 'AMLODIPINO 5 mg TABLETA', 200, '0.41'),
 (133, 'PROFEN  600', 35, '5.54'),
-(134, 'ÁCIDO FÓLICO 5 mg TABLETAS', 64, '0.37'),
-(135, 'FLUOXETINA 20 mg CÁPSULAS', 58, '0.74');
+(134, 'ÁCIDO FÓLICO 5 mg TABLETAS', 64, '0.37');
 
 -- --------------------------------------------------------
 
@@ -282,7 +341,10 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`CODUSER`, `CODROL`, `NOMUSER`, `EMAILUSER`, `CELLUSER`, `CLAVEUSER`) VALUES
 (1, 'ADM', 'Camila Mier', 'camilamier@epn.edu.ec', '0992718388', '123'),
-(2, 'CAJ', 'Jhon Torres', 'jhontorres@epn.edu.ec', '0992717856', '123');
+(2, 'CAJ', 'Jhon Torres', 'jhontorres@epn.edu.ec', '0992717856', '123'),
+(3, 'JBD', 'Paulina Males', 'paulinamales@epn.edu.ec', '0992718356', '123'),
+(4, 'ADM', 'Marcos Moreira', 'marcosmore@epn.edu.ec', '0992717856', '1234'),
+(5, 'JBD', 'Marcos Males', 'marcosmales@epn.edu.ec', '0901820401', '1234');
 
 --
 -- Índices para tablas volcadas
@@ -339,57 +401,34 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `cab__nvtas`
+--
+ALTER TABLE `cab__nvtas`
+  MODIFY `CODNV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `IDCLI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IDCLI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `det_nvtas`
 --
 ALTER TABLE `det_nvtas`
-  MODIFY `CODDET` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `empresa`
---
-ALTER TABLE `empresa`
-  MODIFY `IDEMP` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `CODDET` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `CODPROD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `CODPROD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `CODUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `cab__nvtas`
---
-ALTER TABLE `cab__nvtas`
-  ADD CONSTRAINT `FK_USER_CABECERA` FOREIGN KEY (`CODUSER`) REFERENCES `usuarios` (`CODUSER`);
-
---
--- Filtros para la tabla `det_nvtas`
---
-ALTER TABLE `det_nvtas`
-  ADD CONSTRAINT `FK_DET_NVTAS` FOREIGN KEY (`CODPROD`) REFERENCES `productos` (`CODPROD`),
-  ADD CONSTRAINT `FK_NVTA_PRODUCTOS2` FOREIGN KEY (`CODNV`) REFERENCES `cab__nvtas` (`CODNV`);
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `FK_ROL_USER` FOREIGN KEY (`CODROL`) REFERENCES `roles` (`CODROL`);
+  MODIFY `CODUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
