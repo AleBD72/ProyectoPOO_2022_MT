@@ -60,7 +60,9 @@ Asignatura:
 ---
 ## Videos explicativos (manual de usuario y funcionalidad)
 #### Técnica del código y funcionalidad 
+
 <!-- [![Logo YouTube](https://i.pinimg.com/originals/a2/10/91/a21091a03222436a724e5105acf32349.png)](youtube.com/channel/UCKw5-Fh0nhysa0AB_k-C0kg/featured) -->
 
 #### Manual de usuario
 <!-- [![Logo YouTube](https://es.logodownload.org/wp-content/uploads/2018/09/youtube-logo-81.png)](youtube.com/channel/UCKw5-Fh0nhysa0AB_k-C0kg/featured) -->
+   https://bit.ly/3APtHev
