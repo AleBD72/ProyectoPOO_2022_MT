@@ -60,7 +60,7 @@ Asignatura:
 ---
 ## Videos explicativos (manual de usuario y funcionalidad)
 #### Técnica del código y funcionalidad 
-   [Técnica del código y funcionalidad](https://bit.ly/3wUlUer)
+   [Técnica del código y funcionalidad](https://youtu.be/HJXQXWToT9U)
 <!-- [![Logo YouTube](https://i.pinimg.com/originals/a2/10/91/a21091a03222436a724e5105acf32349.png)](youtube.com/channel/UCKw5-Fh0nhysa0AB_k-C0kg/featured) -->
 
 #### Manual de usuario
