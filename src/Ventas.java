@@ -1,6 +1,4 @@
-import Clases.Producto;
-import Clases.UserGeneral;
-import Clases.Usuarios;
+import Clases.*;
 import com.mysql.cj.xdevapi.Table;
 
 import javax.swing.*;
@@ -19,6 +17,10 @@ import java.util.Stack;
 public class Ventas extends JFrame{
 
     int item;
+    int result;
+    double TotalPagar=0.0;
+    Venta vent = new Venta();
+    Detalle det = new Detalle();
     private JTabbedPane tabbedPane1;
     private JPanel ventasPanel;
     private JButton SalirSistemaBT;
@@ -52,18 +54,12 @@ public class Ventas extends JFrame{
     private JTable ventasGuardadasT;
     private JButton generarNotaDeVentaBT;
     private JLabel totalL;
-    private JButton actualizarFarBT;
-    private JTextField rucFarTF;
-    private JTextField nomFarTF;
-    private JTextField direcFarTF;
-    private JTextField telfFarTF;
     private JTextField idCliTF;
     private JButton limpiarButton;
     private JPanel GVtaPanel;
     private JPanel CliPanel;
     private JPanel ProdPanel;
     private JPanel VtasPanel;
-    private JPanel ConfFarmPanel;
     private JButton limpiarPdBT;
 
     Producto pro= new Producto();
@@ -184,18 +180,17 @@ public class Ventas extends JFrame{
                 if(e.getKeyCode()== KeyEvent.VK_ENTER){
                     if (!"".equals(codVentaTF.getText())){
                         String cod=codVentaTF.getText();
+                        Producto.setNombre(null);
                         BuscarPro(cod);
                         if ( Producto.getNombre() != null){
+
                             prodTF.setText(""+Producto.getNombre());
                             precioTF.setText(""+Producto.getPrecio());
                             stockTF.setText(""+Producto.getStock());
                             cantiTF.requestFocus();
                             System.out.println(Producto.getNombre()+Producto.getStock());
                         }else {
-                            codVentaTF.setText("");
-                            prodTF.setText("");
-                            precioTF.setText("");
-                            stockProdTF.setText("");
+                            LimpiarVenta();
                             codVentaTF.requestFocus();
                         }
                     } else{
@@ -230,6 +225,12 @@ public class Ventas extends JFrame{
                         if(stock >= cantidad) {
                             item = item + 1;
                             //model = (DefaultTableModel) ventasT.getModel();
+                            for (int i=0; i<ventasT.getRowCount();i++){
+                                if(ventasT.getValueAt(i,1).equals(prodTF.getText())){
+                                    JOptionPane.showMessageDialog(null, "El producto ya ha sido registrado");
+                                    return;
+                                }
+                            }
                             ArrayList lista = new ArrayList<>();
                             lista.add(item);
                             lista.add(cod);
@@ -245,8 +246,11 @@ public class Ventas extends JFrame{
                             O[3] = lista.get(4);
                             O[4] = lista.get(5);
 
-                            model.addRow(new Object[]{O[0],O[1],O[2],O[3],O[4]});
-                            System.out.println(cantidad);
+                            model.addRow(O);
+                            //System.out.println(cantidad);
+                            TotalPagar();
+                            LimpiarVenta();
+                            codVentaTF.requestFocus();
 
                         } else{
                             JOptionPane.showMessageDialog(null, "Stock no disponible (Cantidad supera el Stock)");
@@ -259,6 +263,52 @@ public class Ventas extends JFrame{
 
             }
         });
+        eliminaVentaBT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.removeRow(ventasT.getSelectedRow());
+                TotalPagar();
+                codVentaTF.requestFocus();
+                LimpiarVenta();
+            }
+        });
+        rucVentaTF.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                if(e.getKeyCode()== KeyEvent.VK_ENTER){
+                    if(!"".equals(rucVentaTF.getText())){
+                        int cedula = Integer.parseInt(rucVentaTF.getText());
+                        cliente.setNomCli(null);
+                        nombreClienteTF.setText("");
+                        BuscarCli(cedula);
+                        if(cliente.getNomCli() != null){
+                            nombreClienteTF.setText(""+cliente.getNomCli());
+                        } else {
+                            rucVentaTF.setText("");
+                            JOptionPane.showMessageDialog(null, "El cliente no existe");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Ingrese la cedula del cliente");
+                    }
+                }
+            }
+        });
+        generarBT.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RegistrarVenta();
+                RegistrarDet();
+            }
+        });
+    }
+
+    private void LimpiarVenta() {
+        codVentaTF.setText("");
+        prodTF.setText("");
+        cantiTF.setText("");
+        precioTF.setText("");
+        stockTF.setText("");
     }
 
     public static void main(String[] args) {
@@ -275,7 +325,6 @@ public class Ventas extends JFrame{
         celTF.setText(null);
         mailTF.setText(null);
     }
-
     //FUNCIONES CLIENTES
     //FUNCIÓN REGISTRAR UN CLIENTE
     public void RegistrarCli(){
@@ -310,7 +359,6 @@ public class Ventas extends JFrame{
             JOptionPane.showMessageDialog(null, "Cliente no agregado");
         }
     }
-
     public void BuscarCliente(){
         int id;
         id=Integer.parseInt(idCliTF.getText());
@@ -399,9 +447,6 @@ public class Ventas extends JFrame{
         }
 
     }
-
-
-
     public void BorrarCliente(){
         String borrarId=idCliTF.getText();
 
@@ -426,14 +471,6 @@ public class Ventas extends JFrame{
             System.out.println("SQL incorrecto");
         }
     }
-
-    public void limpiarCamposCli(){
-        dniCliTF.setText(null);
-        nomCliTF.setText(null);
-        celTF.setText(null);
-        mailTF.setText(null);
-    }
-
     public void limpiarCamposProd(){
         codProdTF.setText(null);
         nomProdTF.setText(null);
@@ -515,6 +552,16 @@ public class Ventas extends JFrame{
             ex.printStackTrace();
             System.out.println("SQL incorrecto");
         }
+    }
+
+    private void TotalPagar(){
+        TotalPagar=0.00;
+        int numFila= ventasT.getRowCount();
+        for (int i = 0; i < numFila; i++) {
+            double calcu=Double.parseDouble(String.valueOf(ventasT.getModel().getValueAt(i,4)));
+            TotalPagar= TotalPagar+ calcu;
+        }
+        totalL.setText(String.format("%.2f",TotalPagar));
     }
 
     //Cargar Tablas
@@ -626,6 +673,128 @@ public class Ventas extends JFrame{
         }
 
         return producto;
+    }
+
+    public cliente BuscarCli(int cedula){
+        cliente cli = new cliente();
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
+        final String USERNAME="root";
+        final String PASSWORD="";
+        String sql="SELECT * FROM clientes WHERE CEDULACL=?";
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1,String.valueOf(cedula));
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                cliente.setNomCli(rs.getString("NOMCLI"));
+                cliente.setCelular(rs.getString("CELCLI"));
+                cliente.setMailCli(rs.getString("MAILCLI"));
+            }
+
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+
+        return cli;
+    }
+
+    public void RegistrarVenta(){
+        Venta vent = new Venta();
+        String cliente= nombreClienteTF.getText();
+        int codUser = Integer.parseInt(UserGeneral.getCodigoUser());
+        double monto = Double.parseDouble(totalL.getText());
+
+        vent.setCliente(cliente);
+        vent.setUsuario(codUser);
+        vent.setTotal(monto);
+        RegistrarVenta(vent);
+    }
+
+    public int RegistrarVenta (Venta v){
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
+        final String USERNAME="root";
+        final String PASSWORD="";
+
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            String sql="INSERT INTO cab__nvtas (CODUSER, NOMCLIENTE, TOTALNV) VALUES (?,?,?)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1,UserGeneral.getCodigoUser());
+            pst.setString(2,Venta.getCliente());
+            pst.setString(3,String.valueOf(Venta.getTotal()));
+            pst.executeUpdate();
+            //pst.executeQuery();
+            JOptionPane.showMessageDialog(null, "Venta registrada con éxito");
+            stmt.close();
+            conn.close();
+
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error");
+            System.out.println(e);
+        }
+        return result;
+    }
+
+    public void RegistrarDet(){
+        for (int i = 0; i < ventasT.getRowCount(); i++) {
+            int codP= Integer.parseInt(ventasT.getValueAt(i,0).toString());
+            int cantP= Integer.parseInt(ventasT.getValueAt(i,2).toString());
+            double totalCom= Double.parseDouble(ventasT.getValueAt(i,4).toString());
+            int CodDet=IdVenta();
+            det.setNomProd(codP);
+            det.setCantidad(cantP);
+            det.setPrecio(totalCom);
+            det.setCodVenta(CodDet);
+            RegistrarDet(det);
+        }
+    }
+    public int IdVenta(){
+        int id=0;
+        String sql = "SELECT MAX(CODNV) FROM cab__nvtas";
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
+        final String USERNAME="root";
+        final String PASSWORD="";
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs= pst.executeQuery();
+            if (rs.next()){
+                id=rs.getInt(1);
+            }
+
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error");
+            System.out.println(e);
+        }
+        return id;
+
+    }
+    public int RegistrarDet(Detalle DV){
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
+        final String USERNAME="root";
+        final String PASSWORD="";
+        String sql = "INSERT INTO det_nvtas (CODNV, CODPROD, CANTPROD,TOTALNV) VALUES (?,?,?,?)";
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            //pst.setInt(1,Detalle.getCodDet());
+            pst.setInt(1,Detalle.getCodVenta());
+            pst.setInt(2,Detalle.getNomProd());
+            pst.setInt(3,Detalle.getCantidad());
+            pst.setDouble(4,Detalle.getPrecio());
+            pst.executeUpdate();
+            stmt.close();
+            conn.close();
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error de Detalle");
+            System.out.println(e);
+        }
+        return result;
     }
 
 

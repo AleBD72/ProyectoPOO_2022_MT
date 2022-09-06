@@ -1,41 +1,49 @@
 package Clases;
 
 public class cliente {
-    public int id;
-    public int cedula;
-    public String nomCli;
-    public String mailCli;
-    public String fechaCli;
+    public static int id;
+    public static int cedula;
+    public static String nomCli;
+    public static String mailCli;
+    public static String celular;
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public static void setId(int id) {
+        cliente.id = id;
     }
 
-    public String getNomCli() {
+    public static int getCedula() {
+        return cedula;
+    }
+
+    public static void setCedula(int cedula) {
+        cliente.cedula = cedula;
+    }
+
+    public static String getNomCli() {
         return nomCli;
     }
 
-    public void setNomCli(String nomCli) {
-        this.nomCli = nomCli;
+    public static void setNomCli(String nomCli) {
+        cliente.nomCli = nomCli;
     }
 
-    public String getMailCli() {
+    public static String getMailCli() {
         return mailCli;
     }
 
-    public void setMailCli(String mailCli) {
-        this.mailCli = mailCli;
+    public static void setMailCli(String mailCli) {
+        cliente.mailCli = mailCli;
     }
 
-    public String getFechaCli() {
-        return fechaCli;
+    public static String getCelular() {
+        return celular;
     }
 
-    public void setFechaCli(String fechaCli) {
-        this.fechaCli = fechaCli;
+    public static void setCelular(String celular) {
+        cliente.celular = celular;
     }
 }
