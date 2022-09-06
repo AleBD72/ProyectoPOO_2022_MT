@@ -65,4 +65,4 @@ Asignatura:
 
 #### Manual de usuario
 <!-- [![Logo YouTube](https://es.logodownload.org/wp-content/uploads/2018/09/youtube-logo-81.png)](youtube.com/channel/UCKw5-Fh0nhysa0AB_k-C0kg/featured) -->
-   [Manual de Usuarios](https://bit.ly/3APtHev)
+   [Manual de Usuarios](https://youtu.be/IonauHRUuMc)
