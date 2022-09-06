@@ -1,6 +1,14 @@
 import Clases.*;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
 import com.mysql.cj.xdevapi.Table;
-
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.HeadlessException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
@@ -51,15 +59,12 @@ public class Ventas extends JFrame{
     private JTable productosT;
     private JButton buscarProdBT;
     private JTable clientesT;
-    private JTable ventasGuardadasT;
-    private JButton generarNotaDeVentaBT;
     private JLabel totalL;
     private JTextField idCliTF;
     private JButton limpiarButton;
     private JPanel GVtaPanel;
     private JPanel CliPanel;
     private JPanel ProdPanel;
-    private JPanel VtasPanel;
     private JButton limpiarPdBT;
 
     Producto pro= new Producto();
@@ -299,6 +304,8 @@ public class Ventas extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 RegistrarVenta();
                 RegistrarDet();
+                ActualizarStock();
+                PDF();
             }
         });
     }
@@ -797,7 +804,107 @@ public class Ventas extends JFrame{
         return result;
     }
 
+    public void PDF(){
+        Document documento = new Document();
 
+        try {
+            String ruta = System.getProperty("user.home");
+            System.out.println(ruta);
+            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Documents/Reporte.pdf"));
+            documento.open();
+
+            Paragraph paragraphHello = new Paragraph();
+            paragraphHello.add("Farmacia MCTJ" +
+                    "\n" +
+                    "Encabezado Nota de Venta" +
+                    "\n" + "Gracias por su Compra \n\n\n\n");
+            paragraphHello.setAlignment(Element.ALIGN_CENTER);
+            documento.add(paragraphHello);
+
+            PdfPTable tabla = new PdfPTable(5); //numeros de las columnas
+            tabla.addCell("Código Nota de Venta");
+            tabla.addCell("Código de Usuario");
+            tabla.addCell("Nombre del Cliente");
+            tabla.addCell("Total Nota de Venta");
+            tabla.addCell("Fecha");
+
+            PdfPTable tabla1 = new PdfPTable(3); //numeros de las columnas
+            tabla1.addCell("Código Producto");
+            tabla1.addCell("Cantidad");
+            tabla1.addCell("Total Nota de Venta");
+
+            try {
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/farmacia?serverTimezone=UTC", "root", "");
+                PreparedStatement pst = cn.prepareStatement("select * from cab__nvtas WHERE CODNV = (SELECT MAX(CODNV) FROM det_nvtas)");
+
+                ResultSet rs = pst.executeQuery();
+
+                if(rs.next()){
+
+                    do {
+                        tabla.addCell(rs.getString(1));
+                        tabla.addCell(rs.getString(2));
+                        tabla.addCell(rs.getString(3));
+                        tabla.addCell(rs.getString(4));
+                        tabla.addCell(rs.getString(5));
+                    } while (rs.next());
+                    documento.add(tabla);
+                }
+
+                PreparedStatement pst1 = cn.prepareStatement("select * from det_nvtas where CODNV = (SELECT MAX(CODNV) FROM cab__nvtas)");
+
+                ResultSet rs1 = pst1.executeQuery();
+
+                if(rs1.next()){
+
+                    do {
+                        tabla1.addCell(rs1.getString(3));
+                        tabla1.addCell(rs1.getString(4));
+                        tabla1.addCell(rs1.getString(5));
+                    } while (rs1.next());
+
+                    documento.add(tabla1);
+                }
+            } catch (DocumentException | SQLException e) {
+            }
+
+            documento.close();
+            JOptionPane.showMessageDialog(null, "Reporte creado.");
+        } catch (DocumentException | HeadlessException | FileNotFoundException e) {
+        }
+    }
+
+    public void ActualizarStock(){
+        for (int i = 0; i < ventasT.getRowCount(); i++) {
+            String cod= ventasT.getValueAt(i,0).toString();
+            int cant=Integer.parseInt(ventasT.getValueAt(i,2).toString());
+            BuscarPro(cod);
+            int StockAct = pro.getStock()-cant;
+            StockActualiz(StockAct,cod);
+        }
+    }
+    public boolean StockActualiz(int cant, String cod){
+        final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC"; // Error Nombre DATABASE
+        final String USERNAME="root";
+        final String PASSWORD="";
+        String sql = "UPDATE productos SET STOCKPROD=? WHERE CODPROD=?";
+        try {
+            Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            //pst.setInt(1,Detalle.getCodDet());
+            pst.setInt(1,cant);
+            pst.setString(2,cod);
+            pst.executeUpdate();
+            stmt.close();
+            conn.close();
+            return true;
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Error");
+            System.out.println(e);
+            return false;
+        }
+    }
     //Conexión
     public void Connect(){
         final String DB_URL= "jdbc:mysql://localhost/farmacia?serverTimezone=UTC";
