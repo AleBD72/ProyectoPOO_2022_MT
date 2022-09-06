@@ -318,9 +318,6 @@ public class Ventas extends JFrame{
         stockTF.setText("");
     }
 
-    public static void main(String[] args) {
-        Ventas ventitas = new Ventas();
-    }
 
     //Funciones de los botones Jtabbed Pane
 

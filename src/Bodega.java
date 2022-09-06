@@ -354,7 +354,5 @@ public class Bodega extends JFrame {
         }
     }
 
-    /*public static void main(String[] args) {
-        Bodega bdg= new Bodega();
-    }*/
+
 }

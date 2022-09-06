@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="farmacia:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/farmacia_jar</output-path>
+    <root id="archive" name="farmacia.jar">
+      <element id="module-output" name="farmacia" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/Driver_PDF/Driver_PDF/itext5-itextpdf-5.5.12.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

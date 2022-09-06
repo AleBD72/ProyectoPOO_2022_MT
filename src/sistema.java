@@ -108,9 +108,7 @@ public class sistema extends JFrame {
         tipoUserL.setText(UserGeneral.getRolUser());
     }
 
-    public static void main(String[] args) {
-        sistema sist= new sistema();
-    }
+
 
 
 }
